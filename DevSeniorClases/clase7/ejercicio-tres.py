@@ -91,7 +91,38 @@ menu de opciones por consola
 # for numero in range(1, 7, 2):# Se imprime del 1 al 6, pero de 2 en 2
 #     print(f"\nEl numero es: {numero}\n")
 
-caden = input ("Ingrese una cadena de texto: ")
 
-for caracter in caden:
-    print(f"Caracter: {caracter}")
+"""
+Imprimir una cadena de caracteres (String=>str) uno por uno utilizando un bucle for
+"""
+# caden = input ("Ingrese una cadena de texto: ")
+
+# for caracter in caden:
+#     print(f"{caracter}")
+#Imprimir numeros del 1 al 100 utilizando un bucle for
+for numero in range(1,101):
+    print(f"Numero: {numero}")
+    
+#app que permita calcular el cuadrado delos numeros de 1 al 5
+for numero in range(1,6):
+    cuadrado = numero **2
+    print(f"El numero que ingreso {numero} y su cuadrado es: {cuadrado}")
+    
+#app que permita mostrar solo las vocales de una cadena ingresada por el usuario
+cadena1 = input("Ingrese una cadena de texto: ")
+cadena = cadena1.lower() # Convertir a minusculas para facilitar la comparacion
+vocales = "aeiou"
+for caracter in cadena:
+    if caracter in vocales:
+        print(f"Vocal encontrada: {caracter}")
+        
+#app que permita imprimir la tabla de multiplicar de un numero ingresado por pantalla
+
+numero = int(input("Ingrese un numero para ver su tabla de multiplicar: "))
+
+for i in range (1 , 11):
+    
+    resultado = numero * i
+    print(f"{numero} * {i} = {resultado}")
+    
+print("Fin de la tabla")
