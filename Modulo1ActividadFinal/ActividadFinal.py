@@ -16,8 +16,7 @@ def listParInpar ():
     if i % 2 == 0 :
             pares.append(i)
     else:
-            inpares.append(i) 
-            
+            inpares.append(i)            
 #Se imprime la lista con los numeros pares e impares   
  print(f"Los numeros pares de la lista son: {pares}")
  print(f"Los numeros inpares de la lista son: {inpares}") 
