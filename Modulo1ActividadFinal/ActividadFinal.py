@@ -6,7 +6,6 @@ y los guarda los pares en una lista y los imapres en otra
 lista = [1,2,3,4,5,6,7,8,9,10]
 pares = []
 inpares = []
-
 #Se crea la funcion donde se hace el proceso para determinar si el numeros es par o impar y 
 #agregarlo a la lista de pares o impares 
 def listParInpar ():
