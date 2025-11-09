@@ -1,6 +1,6 @@
 """ 
-App que determina si una lista de numero tiene numeros pares o impares 
-y los guarda los pares en una lista y los imapres en otra
+App que determina si una lista de numeros tiene numeros pares o impares 
+y guarda los pares en una lista y los imapres en otra
 """
 #Lisas Inicialisadas
 lista = [1,2,3,4,5,6,7,8,9,10]
