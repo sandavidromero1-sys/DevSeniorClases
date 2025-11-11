@@ -40,8 +40,49 @@ def buscar_estudiante():
     
     if encontrados:
         for e in encontrados:
-            print(f"{i}. {e['nombre']} - {e['edad']} años - Nota:{e['nota']}") 
+            print(f"{e['nombre']} - {e['edad']} años - Nota:{e['nota']}") 
     else:
         print("No se encontro ningun estudiante registrado. ")
+        
+def calcular_promedio():
+    print("\n---promedio General ---")
+    if not estudiantes:
+        print("No hay estudiantes registrados.")
+        return
+    notas = [e["nota"] for e in estudiantes]
+    promedio = sum(notas) / len(notas)
+    print(f"Promedio general: {promedio:.1f}")
+    
+def menu():
+    while True:
+        print("\n***MENU PRINCIPAL***")
+        print("1. Registrar estudiante ")
+        print("2. Mostrar todos los registros ")
+        print("3. Buscar estudiantes por nombre")
+        print("4. Calcular promedio general")
+        print("5. Salir")
+        
+        opcion = input("Elija una opcion (1-5):")
+        
+        if opcion == "1":
+            registrar_estudiante()
+        elif opcion == "2":
+            mostrar_estudiante()
+        elif opcion == "3":
+            buscar_estudiante()
+        elif opcion == "4":
+            calcular_promedio()
+        elif opcion == "5":
+            print ("Hasta luego....")
+            break
+        else:
+            print("Opcion invalida, intente nuevamente.. ")
+            
+def main():
+    menu()
+     
+     
+if __name__ == "__main__":
+    main()
     
     
