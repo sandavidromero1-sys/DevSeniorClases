@@ -1,0 +1,7 @@
+x = 1
+ 
+while x < 4:
+     x+=1
+     if x== 3:
+         break
+     print(x)
