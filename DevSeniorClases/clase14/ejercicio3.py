@@ -2,7 +2,7 @@ from abc import ABC,abstractmethod
 
 class Animal(ABC):
     
-    def __init__(self, nombre):
+    def __init__(self, nombre:str):
         self.nombre = nombre
     @abstractmethod
     def hacerSonido(self)->None:
@@ -23,7 +23,7 @@ class Vaca (Animal):
        print(f"{self.nombre} Mujiendo ")
 class Leon(Animal,Movible):
     def hacerSonido(self)->None:
-       print(f"{self.nombre} Mujiendo ")
+       print(f"{self.nombre} Rujiendo ")
     def mover(self):
        print(f"El leon {self.nombre} se esta moviendo por la sabana Africana")
 
