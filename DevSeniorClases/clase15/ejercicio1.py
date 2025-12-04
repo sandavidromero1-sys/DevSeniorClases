@@ -42,6 +42,33 @@ class Leon(Animal,Movible):
         print(f"El leon {self.nombre} Camina por la sabana......")
         
         
+def hacer_sonido(animal:Animal)->None:
+   animal.sonido()
+   
+def  main()->None:
+    try:
+        animales = [
+            Perro("Firulais"),
+            Gato("Tom"),
+            Vaca("Lola"),
+        ]
+        animal2 = Leon("Mufasa")
+        
+        print("Polimorfismo ")
+        for animal in animales:
+            hacer_sonido(animal)
+        print("Polimorfismo e implementacion de Interfaz")
+        
+        animal2 = Leon("Simba")
+        animal2.sonido()
+        animal2.mover()
+    except ValueError as e:
+        print("Error de validacion")
+        
+if __name__ == "__main__":
+    main()
+        
+        
         
         
     
