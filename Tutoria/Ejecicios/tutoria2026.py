@@ -29,7 +29,7 @@
 # print(lista5)
 # lista5.clear()
 # print(lista5)
-
+"""
 lista_precios = [50,75,46,28,80,65,8]
 lista_precios.sort()
 print(lista_precios)
@@ -45,4 +45,27 @@ def mostrar_menor():
             
 mostrar_mayor()
 mostrar_menor()
+"""
+
     
+lista_clases = ["Matematicas","Fisica", "Quimica","Historia","Lengua"]
+nombre_estudiante = str(input("Ingrese su nombre: "))
+lista_clases_reprobadas = []
+lista_clases_aprobadas = []
+
+for clase in lista_clases:
+    calificacion = float(input(f"ingrese la calificacion de la clase {clase}: "))
+    if calificacion < 3 :
+        lista_clases_reprobadas.append(clase)
+    else:
+        lista_clases_aprobadas.append(clase)
+             
+             
+        
+print("\n****Lista de clases aprobadas*****")
+
+print (f"\n{nombre_estudiante} sus clases aprobadas fueron:\n{lista_clases_aprobadas}")
+
+print("\n****Lista de clases reprobadas*****")
+
+print(f"\n{nombre_estudiante} sus clases aprobadas fueron:\n{lista_clases_reprobadas}")
