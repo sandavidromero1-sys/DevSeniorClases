@@ -29,25 +29,25 @@
 # print(lista5)
 # lista5.clear()
 # print(lista5)
-"""
+
 lista_precios = [50,75,46,28,80,65,8]
 lista_precios.sort()
-print(lista_precios)
+print(f"Los precios son:\n{lista_precios}")
 
 def mostrar_mayor():
     for i in range(len(lista_precios)):
         if lista_precios[i] == max(lista_precios):
-            print(f"el mayor es: {lista_precios[i]}")
+            print(f"el numero mayor de la lista es: {lista_precios[i]} en la posicion {[i]}")
 def mostrar_menor():
     for i in range(len(lista_precios)):
         if lista_precios[i] == min(lista_precios):
-            print(f"el menor es: {lista_precios[i]}")
+            print(f"el numero menor de la lista es: {lista_precios[i]} en la posicion {[i]}")
             
 mostrar_mayor()
 mostrar_menor()
-"""
 
-    
+
+"""
 lista_clases = ["Matematicas","Fisica", "Quimica","Historia","Lengua"]
 nombre_estudiante = str(input("Ingrese su nombre: "))
 lista_clases_reprobadas = []
@@ -69,3 +69,4 @@ print (f"\n{nombre_estudiante} sus clases aprobadas fueron:\n{lista_clases_aprob
 print("\n****Lista de clases reprobadas*****")
 
 print(f"\n{nombre_estudiante} sus clases aprobadas fueron:\n{lista_clases_reprobadas}")
+"""
