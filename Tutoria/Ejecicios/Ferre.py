@@ -1,12 +1,49 @@
 import os
 import sys
 
+class Cliente:
+    def __init__(self,cedula, nombre, telefono, direccion):
+        self.cedula = cedula
+        self.nombre = nombre
+        self.telefono = telefono
+        self.direccion = direccion
+        
+    def obtener_resumen(self):
+        return f"Cliente: {self.nombre}, Cédula: {self.cedula}, Teléfono: {self.telefono}, Dirección: {self.direccion}"
+
+clientes_db = {
+    "000": Cliente("1234567890", "Juan Pérez", "0987654321", "Av. Siempre Viva 123"),
+    "001": Cliente("0987654321", "María Gómez", "0123456789", "Calle Falsa 456"),
+}
+
+def mostrar_cliente(cedula):
+    print("\n---LISTA DE CLIENTES---")
+    print(f"{'CÉDULA':<15} {'NOMBRE':<20} {'TELÉFONO':<15} {'DIRECCIÓN':<30}")
+    print("-" * 80)
+    for cliente in clientes_db.values():
+        print(cliente.obtener_resumen())
+    
+def registrar_cliente():
+    print("\n---REGISTRAR NUEVO CLIENTE---")
+    cedula = input("Ingrese la cédula del cliente: ").strip()
+    if cedula in clientes_db:
+        print("El cliente ya está registrado.")
+    else:
+        nombre = input("Ingrese el nombre del cliente: ").strip()
+        telefono = input("Ingrese el teléfono del cliente: ").strip()
+        direccion = input("Ingrese la dirección del cliente: ").strip()
+        
+        nuevo_cliente = Cliente(cedula, nombre, telefono, direccion)
+        clientes_db[cedula] = nuevo_cliente
+        print(f"Cliente '{nombre}' registrado exitosamente.")  
+
 inventario = {
     "001":{"nombre":"Martillo", "cantidad":50, "precio":15.99},
     "002":{"nombre":"Destornillador", "cantidad":80, "precio":7.49},
     "003":{"nombre":"Llave inglesa", "cantidad":30, "precio":12.89},
     "004":{"nombre":"Taladro", "cantidad":20, "precio":45.00},
 }
+
 
 factura_actual = []
 
