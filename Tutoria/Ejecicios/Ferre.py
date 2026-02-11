@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 class Cliente:
     def __init__(self,cedula, nombre, telefono, direccion):
         self.cedula = cedula
@@ -16,12 +17,15 @@ clientes_db = {
     "001": Cliente("0987654321", "María Gómez", "0123456789", "Calle Falsa 456"),
 }
 
-def mostrar_cliente(cedula):
+
+def mostrar_cliente():
     print("\n---LISTA DE CLIENTES---")
     print(f"{'CÉDULA':<15} {'NOMBRE':<20} {'TELÉFONO':<15} {'DIRECCIÓN':<30}")
-    print("-" * 80)
+    print("-" * 100)
+    
     for cliente in clientes_db.values():
-        print(cliente.obtener_resumen())
+        print(f"{cliente.cedula:<15} {cliente.nombre:<20} {cliente.telefono:<15} {cliente.direccion:<30}")
+        
     
 def registrar_cliente():
     print("\n---REGISTRAR NUEVO CLIENTE---")
@@ -218,11 +222,15 @@ def main():
         print("5. Agregar Nuevo Producto")
         print("6. Modificar Producto")
         print("7. Eliminar Producto")
-        print("8. Salir")
+        print("-" * 30)
+        print("8. Mostrar Clientes")
+        print("9. Registrar Nuevo Cliente")
+        print("10. Salir")
         
         opcion = input("\n>>Seleccione una opción: ")
         
         match opcion:
+        
             case "1":
                 mostrar_inventario()
             case "2":
@@ -238,6 +246,10 @@ def main():
             case "7":
                 eliminar_producto()
             case "8":
+                mostrar_cliente()
+            case "9":
+                registrar_cliente()
+            case "10":
                 print("Saliendo del sistema...")
                 break
             case _:

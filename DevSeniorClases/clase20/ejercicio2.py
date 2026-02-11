@@ -4,7 +4,7 @@ def eliminar_duplicados(numeros:List[int]) -> List[int]:
     if not isinstance(numeros,list):
         raise TypeError("Se espera una listas de numeros ")
     if not all (isinstance(n,int)for n in numeros):
-        raise ValueError("Todos los elementos de la lista debemn ser numeros enteros")
+        raise ValueError("Todos los elementos de la lista deben ser numeros enteros")
     return sorted(set(numeros))
 
 def main() -> None:
