@@ -1,0 +1,4 @@
+Hola, este es un archivo de texto.
+Estamos aprendiendo a manejar archivos en Python.
+
+Esta es una línea adicional.
