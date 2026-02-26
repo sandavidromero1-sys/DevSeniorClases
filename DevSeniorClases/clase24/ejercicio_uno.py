@@ -21,3 +21,28 @@ def read_inventory() -> None:
         print("\n *** INVENTARIO ***")
         for row in reader:
             print(row)
+            
+def read_inventory_formatted() -> None:
+    if not FILE_PATH.exists():
+        print("El archivo no exite")
+        return
+    with FILE_PATH.open("r",encoding="utf-8") as file:
+        reader = csv.reader(file)
+        header = next(reader) # Lee la primera fila como encabezado
+        print("-" * 40)
+        print("\n *** INVENTARIO CON FORMATO DE SALIDA ***")
+        for row in reader:
+            print(
+                f"ID: {row[0]}"
+                f"producto: {row[1]}"
+                f"precio: {row[2]}"
+                f"stock: {row[3]}"
+            )
+            
+def main() -> None:
+    create_inventory_file()
+    read_inventory()
+    read_inventory_formatted()
+
+if __name__ == "__main__":
+    main()
