@@ -1,0 +1,7 @@
+Factura ID: 012026
+Cliente:  juan romero
+____________________
+martillo x 10 -$ 150000.00
+clavos x 2000 -$ 200000.00
+____________________
+Total: $ 350000.00
