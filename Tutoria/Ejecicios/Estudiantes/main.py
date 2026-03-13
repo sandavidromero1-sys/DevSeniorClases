@@ -9,19 +9,25 @@ def main():
         print("\n1. Agregar estudiante")
         print("2. Listar estudiantes")
         print("3. Eliminar estudiante")
-        print("4. Generar lista de supermercado")
+        print("4. Generar lista")
         print("5. Salir")
         
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
             # Agregar estudiante
-            id = int(input("Ingrese el ID del estudiante: "))
+            while True:
+                try:
+                    id = int(input("Ingrese el ID del estudiante (número entero): "))
+                    break  # Sale del bucle si el ID es válido
+                except ValueError:
+                    print("Error: El ID debe ser un número entero. Intente de nuevo.")
+            
             nombre = input("Ingrese el nombre: ").strip()
-            apellido = input("Ingrese el apellido: ").strip()
             edad = int(input("Ingrese la edad: ").strip())
             
-            estudiante = Estudiante(id, nombre, apellido, edad)
+            # Creación del estudiante sin apellido
+            estudiante = Estudiante(id, nombre, edad)
             repo.agregar(estudiante)
             print(f"Estudiante {nombre} agregado correctamente.")
         
@@ -31,7 +37,7 @@ def main():
             if estudiantes:
                 print("\nLista de estudiantes:")
                 for est in estudiantes:
-                    print(f"ID: {est.id}, Nombre: {est.nombre} {est.apellido}, Edad: {est.edad}")
+                    print(f"ID: {est.id}, Nombre: {est.nombre}, Edad: {est.edad}")
             else:
                 print("No hay estudiantes registrados.")
         
@@ -45,9 +51,9 @@ def main():
                 print(f"No se encontró el estudiante con ID {id}.")
         
         elif opcion == "4":
-            # Generar lista de supermercado
+            # Generar lista
             repo.generar_lista_supermercado_txt()
-            print("Lista de supermercado generada correctamente.")
+            print("Lista generada correctamente.")
         
         elif opcion == "5":
             # Salir
